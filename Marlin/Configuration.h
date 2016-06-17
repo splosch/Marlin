@@ -1256,3 +1256,12 @@ const bool Z_MIN_PROBE_ENDSTOP_INVERTING = false; // set to true to invert the l
 #include "thermistortables.h"
 
 #endif //CONFIGURATION_H
+
+
+/**
+ *  Debugging notes:
+ **/
+
+// RAMBo + Full graphics Display --> KILL_PIN is triggered without reason --> had to deactivate
+// Sintron Full Graphics LCD --> just showing Light, no display -> Cable || Header on Breakout or Display was reversed / mirrored --> clue http://forum.reprapdiscount.com/threads/my-new-full-graphic-smart-controller-seems-defective.685/
+// --> Fixed filing of cable connector index and reversing (noticed that both cables provide power if correctly conected ... maybe an easy way of debugging fixing the scenario)
