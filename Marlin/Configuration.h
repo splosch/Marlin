@@ -368,7 +368,7 @@
   #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-(DELTA_EFFECTOR_OFFSET)-(DELTA_CARRIAGE_OFFSET) + 1.5)
 
   // Print surface diameter/2 minus unreachable space (avoid collisions with vertical towers).
-  #define DELTA_PRINTABLE_RADIUS 108.0
+  #define DELTA_PRINTABLE_RADIUS 105.0
 
   // Delta calibration menu
   // uncomment to add three points calibration menu option.
