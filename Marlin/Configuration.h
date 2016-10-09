@@ -747,16 +747,13 @@
 // @section homing
 
 // The position of the homing switches
-#define MANUAL_HOME_POSITIONS  // If defined, MANUAL_*_HOME_POS below will be used
 #define BED_CENTER_AT_0_0  // If defined, the center of the bed is at (X=0, Y=0)
 
 // Manual homing switch locations:
 // For deltabots this means top and center of the Cartesian print volume.
-#if ENABLED(MANUAL_HOME_POSITIONS)
-  #define MANUAL_X_HOME_POS 0
-  #define MANUAL_Y_HOME_POS 0
-  #define MANUAL_Z_HOME_POS 230.25 // For delta: Distance between nozzle and print surface after homing.
-#endif
+#define MANUAL_X_HOME_POS 0
+#define MANUAL_Y_HOME_POS 0
+#define MANUAL_Z_HOME_POS 230.25 // For delta: Distance between nozzle and print surface after homing.
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
@@ -773,10 +770,29 @@
   #define Z_SAFE_HOMING_Y_POINT ((Y_MIN_POS + Y_MAX_POS) / 2)    // Y point for Z homing when homing all axis (G28).
 #endif
 
+// Homing speeds (mm/m)
+#define HOMING_FEEDRATE_XY (50*60)
+#define HOMING_FEEDRATE_Z  (4*60)
+
 // @section movement
 
+/**
+ * MOVEMENT SETTINGS
+ */
+
+// delta homing speeds must be the same on xyz
+#define HOMING_FEEDRATE_XY (200*60)
+#define HOMING_FEEDRATE_Z  (200*60)
+#define HOMING_FEEDRATE_E  0
+
+#define XYZ_FULL_STEPS_PER_ROTATION 200
+#define XYZ_MICROSTEPS 16
+#define XYZ_BELT_PITCH 2
+#define XYZ_PULLEY_TEETH 20
+#define XYZ_STEPS ((XYZ_FULL_STEPS_PER_ROTATION) * (XYZ_MICROSTEPS) / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
 // default settings
 #define E_STEPS_PER_MM 95 // steps per mm
+
 // delta speeds must be the same on xyz
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, E_STEPS_PER_MM}
 #define DEFAULT_MAX_FEEDRATE          {120, 120, 120, 120}    // (mm/sec)
@@ -1058,7 +1074,7 @@
 //
 //  Set this option if CLOCKWISE causes values to DECREASE
 //
-//#define REVERSE_ENCODER_DIRECTION
+#define REVERSE_ENCODER_DIRECTION
 
 //
 // This option reverses the encoder direction for navigating LCD menus.
