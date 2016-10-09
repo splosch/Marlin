@@ -126,7 +126,7 @@
 
 #if ENABLED(ULTRA_LCD)
 
-  #define KILL_PIN -1 //80 override panel kill pin
+  #define KILL_PIN 80 //-1 override panel kill pin
 
   #if ENABLED(NEWPANEL)
 
