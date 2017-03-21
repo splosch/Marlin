@@ -319,9 +319,9 @@
   #define K1 0.95 //smoothing factor within the PID
 
   // Kossel Pro
-  #define  DEFAULT_Kp 18.82
-  #define  DEFAULT_Ki 1.68
-  #define  DEFAULT_Kd 52.74
+  #define  DEFAULT_Kp 21.07
+  #define  DEFAULT_Ki 1.71
+  #define  DEFAULT_Kd 64.72
 
 #endif // PIDTEMP
 
@@ -910,7 +910,7 @@
 // For deltabots this means top and center of the Cartesian print volume.
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 230.2 // For delta: Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 233.4 // For delta: Distance between nozzle and print surface after homing.
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
 //
